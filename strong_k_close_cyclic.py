@@ -1,7 +1,7 @@
 from z3 import *
 from itertools import combinations, product
 
-# test if Z_m is strongly m-1 close
+# test if Z_m is strongly isolating on block matroid of rank r=m
 m = 4
 
 r = m
@@ -47,4 +47,4 @@ for X in E_choose_r:
 if s.check()==sat:
     print(s.model())
 else:
-    print("Z_"+str(m)+" is strongly "+str(m-1)+"-close")
+    print("Z_"+str(m)+" is not strongly isolating for block matroid of rank "+str(r))
